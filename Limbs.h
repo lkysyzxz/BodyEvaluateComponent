@@ -1,4 +1,6 @@
+#pragma once
 #include "Joint.h"
+
 class Limbs{
     private:
         Joint* joints[3];

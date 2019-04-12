@@ -1,5 +1,7 @@
+#pragma once
 #include "LimbsMap.h"
 #include "Body.h"
+
 class EvaluateComponent{
   private:
     static float ErrorValueThrehold;
@@ -14,9 +16,20 @@ class EvaluateComponent{
     LimbsMap* mapping[5];
 
     LimbsMap *lastErrorLimbs;
+
+    int errorCount[5];
   public:
 
     EvaluateComponent(Body *standard,Body *user);
 
     LimbsMap *Compare();
+
+    void SamplingErrorBone();
+
+    LimbsMap *PickErrorBone();
+
+  private:
+    void ClearErrorCount();
+    
+    int PickErrorIndex();
 };

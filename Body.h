@@ -1,5 +1,5 @@
+#pragma once
 #include "Limbs.h"
-
 
 class Body
 {
@@ -32,9 +32,16 @@ class Body
 
   public:
     Body(){
-
+		SetupLimbs();
     }
 
+	void SetupLimbs() {
+		body.SetJoints(&spine, &chest, &head);
+		leftArm.SetJoints(&leftShoulder, &leftElbow, &leftWrist);
+		rightArm.SetJoints(&rightShoulder, &rightElbow, &rightWrist);
+		leftLeg.SetJoints(&leftThigh, &leftKnee, &leftAnkle);
+		rightLeg.SetJoints(&rightThigh, &rightKnee, &rightAnkle);
+	}
     Limbs* GetBody(){
         return &this->body;
     }
