@@ -67,6 +67,7 @@ void EvaluateComponent::SamplingErrorBone(){
 
 LimbsMap * EvaluateComponent::ExtractErrorBone(){
 	int index = this->PickErrorIndex();
+	this->ClearErrorCount();
 	if(index == -1)return NULL;
 	else return this.mapping[index];
 }

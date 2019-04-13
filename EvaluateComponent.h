@@ -26,7 +26,7 @@ class EvaluateComponent{
 
     void SamplingErrorBone();
 
-    LimbsMap *PickErrorBone();
+    LimbsMap *ExtractErrorBone();
 
   private:
     void ClearErrorCount();
