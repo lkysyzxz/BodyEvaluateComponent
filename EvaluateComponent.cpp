@@ -103,6 +103,13 @@ LimbsMap *EvaluateComponent::ExtractErrorBone()
 		}
 	}
 
+	if (res == -1 && this->missCache.size() > 0)
+	{
+		auto it = this->missCache.begin();
+		res = it->first;
+		this->missCache.erase(it);
+	}
+
 	if (res == -1)
 	{
 		return NULL;
