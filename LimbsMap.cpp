@@ -22,9 +22,6 @@ void LimbsMap::UpdateErrorValue()
             sum += (1 - similarity) / 3.0f;
         }
         errorValue = sum;
-		else if(errorCount>0) {
-			errorCount=0;
-		}
     }
 }
 

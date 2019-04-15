@@ -18,6 +18,9 @@ class EvaluateComponent{
     LimbsMap *lastErrorLimbs;
 
     int errorCount[5];
+    int lastExtractSide;
+    std::vector<int> missCache;
+    
   public:
 
     EvaluateComponent(Body *standard,Body *user);
@@ -31,5 +34,11 @@ class EvaluateComponent{
   private:
     void ClearErrorCount();
     
+    std::vector<std::pair<int,int>> FiltErrorCount();
+
+    int GetSide(int num);
+    
+    int PickErrorIndex(std::vector<std::pair<int,int>> &vec);
+
     int PickErrorIndex();
 };
